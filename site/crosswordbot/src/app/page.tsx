@@ -41,7 +41,7 @@ export default async function Home() {
       
       <br></br>
       
-      <Hero/>
+      {/* <Hero/> */}
       <Footer/>
 
 
