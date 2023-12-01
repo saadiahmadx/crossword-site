@@ -31,12 +31,12 @@ const processActionsToMatrix = (actions: string[]): string[] => {
         const [, direction, index, word] = matchResult;
   
         // Convert index to 0-based and split the word into characters
-        const parsedIndex = parseInt(index || '', 10);
+        const parsedIndex = parseInt(index ?? '', 10);
   
         // Check if parsedIndex is a valid number
         if (!isNaN(parsedIndex) && parsedIndex >= 1 && parsedIndex <= 5) {
           const startIndex = parsedIndex - 1;
-          const chars = word?.split('') || [];
+          const chars = word?.split('') ?? [];
   
           // Calculate the start position in the matrix
           const matrixStartIndex = direction === 'h' ? startIndex * 5 : startIndex;
@@ -44,7 +44,7 @@ const processActionsToMatrix = (actions: string[]): string[] => {
           // Update the matrix based on the direction
           for (let i = 0; i < chars.length; i++) {
             if (matrix[matrixStartIndex + (direction === 'h' ? i : i * 5)] !== undefined) {
-              matrix[matrixStartIndex + (direction === 'h' ? i : i * 5)] = chars[i]?.toUpperCase() || '';
+              matrix[matrixStartIndex + (direction === 'h' ? i : i * 5)] = chars[i]?.toUpperCase() ?? '';
             }
           }
         }
@@ -72,7 +72,7 @@ const Crossword: React.FC<CrosswordProps> = ({ jsonFile, flag }) => {
     // Fetch the crossword data from the JSON file
     fetch(jsonFile)
       .then((response) => response.json())
-      .then((data) => {
+      .then((data: [string[], string[], Step[]]) => {
         console.log('Fetched data:', data);
         setCrosswordData({
           clues: data[0],
