@@ -22,7 +22,7 @@ interface Step {
 }
 
 const processActionsToMatrix = (actions: string[]): string[] => {
-    const matrix: string[] = Array(25).fill('');
+    const matrix: string[] = Array<string>(25).fill('');
   
     actions.forEach((action) => {
       const matchResult = action.match(/(h|v)(\d+)\.\s(.+)/);
