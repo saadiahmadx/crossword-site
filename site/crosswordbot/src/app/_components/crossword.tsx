@@ -125,13 +125,13 @@ const Crossword: React.FC<CrosswordProps> = ({ jsonFile, flag }) => {
         </div>
 
         <div className="pagination">
-          <button onClick={handlePrevPage} disabled={currentPage === 0}>
+          <button className='hover:outline-none hover:border-blue-500 hover:ring hover:ring-blue-200' onClick={handlePrevPage} disabled={currentPage === 0}>
             Prev
           </button>
           <span>
             {currentPage + 1} / {crosswordData.steps.length}
           </span>
-          <button onClick={handleNextPage} disabled={currentPage === crosswordData.steps.length - 1}>
+          <button className='hover:outline-none hover:border-blue-500 hover:ring hover:ring-blue-200' onClick={handleNextPage} disabled={currentPage === crosswordData.steps.length - 1}>
             Next
           </button>
         </div>
