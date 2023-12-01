@@ -28,7 +28,7 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-rowjustify-around mt-16">
+      <div className="flex flex-col md:flex-row justify-around mt-16">
         <div>
           <h1 className="text-2xl font-bold mx-auto text-center mt-4 mb-4">Answer</h1>
           <Crossword jsonFile='/saadi_infoss_dfs_prune.json' flag={false}/>
