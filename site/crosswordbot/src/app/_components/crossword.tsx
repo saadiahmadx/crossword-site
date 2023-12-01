@@ -77,7 +77,7 @@ const Crossword: React.FC<CrosswordProps> = ({ jsonFile, flag }) => {
         setCrosswordData({
           clues: data[0],
           grid: data[1],
-          steps: data[2] as Step[],
+          steps: data[2],
         });
       })
       .catch((error) => {
